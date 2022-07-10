@@ -4,6 +4,8 @@
 
 [在线查看](https://shinelam.github.io/docs-ts/)
 
+![首页](https://www.giaott.com/images/2022/07/10/2E8dy.jpg)
+
 - 介绍
   - ts简介
   - ts与js关系
