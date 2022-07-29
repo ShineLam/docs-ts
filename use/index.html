@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用Typescript | Typescript笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs-ts/assets/css/0.styles.31995b61.css" as="style"><link rel="preload" href="/docs-ts/assets/js/app.ff4939b7.js" as="script"><link rel="preload" href="/docs-ts/assets/js/2.1fdbdfe2.js" as="script"><link rel="preload" href="/docs-ts/assets/js/14.6592416f.js" as="script"><link rel="prefetch" href="/docs-ts/assets/js/10.5c55f689.js"><link rel="prefetch" href="/docs-ts/assets/js/11.7f3a0452.js"><link rel="prefetch" href="/docs-ts/assets/js/12.8db5717e.js"><link rel="prefetch" href="/docs-ts/assets/js/13.46f7cd5b.js"><link rel="prefetch" href="/docs-ts/assets/js/3.7b03d223.js"><link rel="prefetch" href="/docs-ts/assets/js/4.8e022cfe.js"><link rel="prefetch" href="/docs-ts/assets/js/5.d13ef934.js"><link rel="prefetch" href="/docs-ts/assets/js/6.1f639627.js"><link rel="prefetch" href="/docs-ts/assets/js/7.88185280.js"><link rel="prefetch" href="/docs-ts/assets/js/8.75075e27.js"><link rel="prefetch" href="/docs-ts/assets/js/9.756da16a.js">
+    <link rel="stylesheet" href="/docs-ts/assets/css/0.styles.31995b61.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs-ts/" class="home-link router-link-active"><!----> <span class="site-name">Typescript笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs-ts/" class="nav-link">
+    Home
+  </a></div><div class="nav-item"><a href="https://shinelam.github.io/ethan-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Blog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ShineLam" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs-ts/" class="nav-link">
+    Home
+  </a></div><div class="nav-item"><a href="https://shinelam.github.io/ethan-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Blog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ShineLam" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docs-ts/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/docs-ts/use/" aria-current="page" class="active sidebar-link">使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs-ts/use/#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/docs-ts/use/#编写" class="sidebar-link">编写</a></li><li class="sidebar-sub-header"><a href="/docs-ts/use/#编译" class="sidebar-link">编译</a></li></ul></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>语法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs-ts/grammar/type.html" class="sidebar-link">基本类型</a></li><li><a href="/docs-ts/grammar/interface.html" class="sidebar-link">接口</a></li><li><a href="/docs-ts/grammar/class.html" class="sidebar-link">类</a></li><li><a href="/docs-ts/grammar/function.html" class="sidebar-link">函数</a></li><li><a href="/docs-ts/grammar/generic.html" class="sidebar-link">泛型</a></li><li><a href="/docs-ts/grammar/other.html" class="sidebar-link">其他</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用typescript"><a href="#使用typescript" class="header-anchor">#</a> 使用Typescript</h1> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <p>在命令行运行以下命令，全局安装</p> <div class="language-sh extra-class"><pre class="language-sh"><code>// <span class="token function">yarn</span>
+<span class="token function">yarn</span> global <span class="token function">add</span> typescript
+
+// <span class="token function">npm</span>
+<span class="token function">npm</span> <span class="token function">install</span> -g typescript
+</code></pre></div><p>安装完成后，检查是否成功</p> <div class="language-sh extra-class"><pre class="language-sh"><code>tsc -V // Version 版本号
+</code></pre></div><h2 id="编写"><a href="#编写" class="header-anchor">#</a> 编写</h2> <p>使用<code>.ts</code>文件，编写js代码在浏览器可正常运行</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// main.ts</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'Hello TS'</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> 
+  <span class="token comment">// Hello TS</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>编写ts代码在浏览器，报错</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// main.ts</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> str<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'Hello TS'</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> 
+  <span class="token comment">// 报错</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="编译"><a href="#编译" class="header-anchor">#</a> 编译</h2> <h3 id="手动编译"><a href="#手动编译" class="header-anchor">#</a> 手动编译</h3> <p>在命令行运行ts编译器</p> <div class="language-sh extra-class"><pre class="language-sh"><code>tsc main.ts
+</code></pre></div><p>会自动生成<code>main.js</code>文件，包含由<code>main.ts</code>编译的js代码</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// main.js</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'Hello TS'</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="测试下"><a href="#测试下" class="header-anchor">#</a> 测试下</h4> <p>在index.html引入main.js，浏览器控制台输出</p> <div class="language-js extra-class"><pre class="language-js"><code>Hello <span class="token constant">TS</span>
+</code></pre></div><p>在命令行运行</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">node</span> main.js
+
+//输出
+Hello TS
+</code></pre></div><h3 id="vscode自动编译"><a href="#vscode自动编译" class="header-anchor">#</a> vscode自动编译</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token number">1</span>. 命令行运行以下命令，生成配置文件tsconfig.json
+    tsc --init
+
+<span class="token number">2</span>. 修改tsconfig.json文件
+    <span class="token string">&quot;outDir&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;./js&quot;</span>, // 编译成功文件输出目录
+    <span class="token string">&quot;strict&quot;</span><span class="token builtin class-name">:</span> false, // 关闭严格模式
+
+<span class="token number">3</span>. 启动监视任务
+    vscode工具栏： 终端 -<span class="token operator">&gt;</span> 运行任务 -<span class="token operator">&gt;</span> 监视tsconfig.json
+
+<span class="token number">4</span>. 自动编译，生成js文件
+</code></pre></div><h3 id="webpack打包ts"><a href="#webpack打包ts" class="header-anchor">#</a> webpack打包TS</h3> <h4 id="准备一个简单项目-结构如下"><a href="#准备一个简单项目-结构如下" class="header-anchor">#</a> 准备一个简单项目，结构如下</h4> <div class="language-text extra-class"><pre class="language-text"><code>.
+├── webpack-ts
+│   ├── build
+│   │   └── webpack.config.js
+│   ├── public
+│   │   └── index.html
+│   └── src
+│       └── main.ts
+└── package.json
+</code></pre></div><h5 id="index-html"><a href="#index-html" class="header-anchor">#</a> index.html</h5> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>webpack-ts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h5 id="main-ts"><a href="#main-ts" class="header-anchor">#</a> main.ts</h5> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello TS'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h5 id="webpack-config-js"><a href="#webpack-config-js" class="header-anchor">#</a> webpack.config.js</h5> <p>❗️ 不同版本的webpack配置有差异</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span>CleanWebpackPlugin<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> isProd <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token comment">// 是否生产环境</span>
+
+<span class="token keyword">function</span> <span class="token function">resolve</span> <span class="token punctuation">(</span><span class="token parameter">dir</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'..'</span><span class="token punctuation">,</span> dir<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">mode</span><span class="token operator">:</span> isProd <span class="token operator">?</span> <span class="token string">'production'</span> <span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">app</span><span class="token operator">:</span> <span class="token string">'./src/main.ts'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">'[name].[contenthash:8].js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.tsx?$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token string">'ts-loader'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">include</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+    <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'./public/index.html'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token literal-property property">resolve</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">extensions</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.tsx'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token literal-property property">devtool</span><span class="token operator">:</span> isProd <span class="token operator">?</span> <span class="token string">'cheap-module-source-map'</span> <span class="token operator">:</span> <span class="token string">'eval-cheap-module-source-map'</span><span class="token punctuation">,</span>
+  
+  <span class="token literal-property property">stats</span><span class="token operator">:</span> <span class="token string">'errors-only'</span><span class="token punctuation">,</span> <span class="token comment">// 打包日志输出输出错误信息</span>
+
+  <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8081</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="安装依赖"><a href="#安装依赖" class="header-anchor">#</a> 安装依赖</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> <span class="token function">add</span> -D typescript
+<span class="token function">yarn</span> <span class="token function">add</span> -D ts-loader
+<span class="token function">yarn</span> <span class="token function">add</span> -D webpack webpack-cli
+<span class="token function">yarn</span> <span class="token function">add</span> -D webpack-dev-server
+<span class="token function">yarn</span> <span class="token function">add</span> -D html-webpack-plugin clean-webpack-plugin
+<span class="token function">yarn</span> <span class="token function">add</span> -D cross-env
+</code></pre></div><h4 id="配置打包命令"><a href="#配置打包命令" class="header-anchor">#</a> 配置打包命令</h4> <div class="language-json extra-class"><pre class="language-json"><code>  <span class="token comment">// package.json</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.js&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=production webpack --config build/webpack.config.js&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h4 id="打包运行"><a href="#打包运行" class="header-anchor">#</a> 打包运行</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> dev
+<span class="token function">yarn</span> build
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs-ts/" class="prev router-link-active">
+          介绍
+        </a></span> <span class="next"><a href="/docs-ts/grammar/type.html">
+          基本类型
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs-ts/assets/js/app.ff4939b7.js" defer></script><script src="/docs-ts/assets/js/2.1fdbdfe2.js" defer></script><script src="/docs-ts/assets/js/14.6592416f.js" defer></script>
+  </body>
+</html>

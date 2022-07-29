@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>接口 | Typescript笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs-ts/assets/css/0.styles.31995b61.css" as="style"><link rel="preload" href="/docs-ts/assets/js/app.ff4939b7.js" as="script"><link rel="preload" href="/docs-ts/assets/js/2.1fdbdfe2.js" as="script"><link rel="preload" href="/docs-ts/assets/js/11.7f3a0452.js" as="script"><link rel="prefetch" href="/docs-ts/assets/js/10.5c55f689.js"><link rel="prefetch" href="/docs-ts/assets/js/12.8db5717e.js"><link rel="prefetch" href="/docs-ts/assets/js/13.46f7cd5b.js"><link rel="prefetch" href="/docs-ts/assets/js/14.6592416f.js"><link rel="prefetch" href="/docs-ts/assets/js/3.7b03d223.js"><link rel="prefetch" href="/docs-ts/assets/js/4.8e022cfe.js"><link rel="prefetch" href="/docs-ts/assets/js/5.d13ef934.js"><link rel="prefetch" href="/docs-ts/assets/js/6.1f639627.js"><link rel="prefetch" href="/docs-ts/assets/js/7.88185280.js"><link rel="prefetch" href="/docs-ts/assets/js/8.75075e27.js"><link rel="prefetch" href="/docs-ts/assets/js/9.756da16a.js">
+    <link rel="stylesheet" href="/docs-ts/assets/css/0.styles.31995b61.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs-ts/" class="home-link router-link-active"><!----> <span class="site-name">Typescript笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs-ts/" class="nav-link">
+    Home
+  </a></div><div class="nav-item"><a href="https://shinelam.github.io/ethan-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Blog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ShineLam" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs-ts/" class="nav-link">
+    Home
+  </a></div><div class="nav-item"><a href="https://shinelam.github.io/ethan-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Blog
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ShineLam" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docs-ts/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/docs-ts/use/" class="sidebar-link">使用</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>语法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs-ts/grammar/type.html" class="sidebar-link">基本类型</a></li><li><a href="/docs-ts/grammar/interface.html" aria-current="page" class="active sidebar-link">接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#举个🌰" class="sidebar-link">举个🌰</a></li><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#只读属性" class="sidebar-link">只读属性</a></li><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#可选属性" class="sidebar-link">可选属性</a></li><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#函数类型" class="sidebar-link">函数类型</a></li><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#类类型" class="sidebar-link">类类型</a></li><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#多接口" class="sidebar-link">多接口</a></li><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#接口继承" class="sidebar-link">接口继承</a></li><li class="sidebar-sub-header"><a href="/docs-ts/grammar/interface.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/docs-ts/grammar/class.html" class="sidebar-link">类</a></li><li><a href="/docs-ts/grammar/function.html" class="sidebar-link">函数</a></li><li><a href="/docs-ts/grammar/generic.html" class="sidebar-link">泛型</a></li><li><a href="/docs-ts/grammar/other.html" class="sidebar-link">其他</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="接口"><a href="#接口" class="header-anchor">#</a> 接口</h1> <p>Typescrip的核心原则之一就是对值所具有的结构进行类型检查。可以使用<code>Interface</code>定义对象的类型。<strong>接口是对象的属性和方法的抽象</strong></p> <p>接口可以视为一种约束</p> <h2 id="举个🌰"><a href="#举个🌰" class="header-anchor">#</a> 举个🌰</h2> <p>❗️ 定义为接口类型的对象，<strong>对象的属性必须与接口规定的一致(属性名/属性类型/属性数量)</strong></p> <div class="language-ts extra-class"><pre class="language-ts"><code>  <span class="token keyword">interface</span> <span class="token class-name">hairline</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    type<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token comment">// 发际线类型</span>
+    hair<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token comment">// 头发数量</span>
+    stats<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token comment">// 发际线状态</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">let</span> ethan<span class="token operator">:</span> hairline <span class="token operator">=</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    type<span class="token operator">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span>
+    hair<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+    stats<span class="token operator">:</span> <span class="token string">'less-hair'</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><h2 id="只读属性"><a href="#只读属性" class="header-anchor">#</a> 只读属性</h2> <p>有些属性只能在刚创建时就确定它的值。可以使用<code>readonly</code>表示，接👆🌰</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// id一般是唯一的，不可再修改的</span>
+  <span class="token keyword">interface</span> <span class="token class-name">hairline</span> <span class="token punctuation">{</span>
+    <span class="token keyword">readonly</span> id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    type<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token comment">// 发际线类型</span>
+    hair<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token comment">// 头发数量</span>
+    stats<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token comment">// 发际线状态</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 不会报错</span>
+  <span class="token keyword">let</span> ethan<span class="token operator">:</span> hairline <span class="token operator">=</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    type<span class="token operator">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span>
+    hair<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+    stats<span class="token operator">:</span> <span class="token string">'less-hair'</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ethan.id = 1 // 报错: 无法分配到 &quot;id&quot; ，因为它是只读属性</span>
+</code></pre></div><h2 id="可选属性"><a href="#可选属性" class="header-anchor">#</a> 可选属性</h2> <p>有时接口中的属性不全是必要的。可以使用<code>?</code>表示，接👆🌰</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// 头发数量不一定能统计到，所以不是必须的，可以这样表示</span>
+  <span class="token keyword">interface</span> <span class="token class-name">hairline</span> <span class="token punctuation">{</span>
+    <span class="token keyword">readonly</span> id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    type<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token comment">// 发际线类型</span>
+    hair<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token comment">// 头发数量</span>
+    stats<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token comment">// 发际线状态</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 不会报错</span>
+  <span class="token keyword">let</span> ethan<span class="token operator">:</span> hairline <span class="token operator">=</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    type<span class="token operator">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span>
+    stats<span class="token operator">:</span> <span class="token string">'less-hair'</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><h2 id="函数类型"><a href="#函数类型" class="header-anchor">#</a> 函数类型</h2> <p>通过接口的方式作为函数类型，需要给接口定义一个调用签名。
+其实就是给函数定义<strong>参数列表和返回值类型</strong>。
+参数列表里的每个参数都需要名字和类型。</p> <div class="language-ts extra-class"><pre class="language-ts"><code>  <span class="token keyword">interface</span> <span class="token class-name">ISrchHairline</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 定义一个调用签名</span>
+  <span class="token comment">//参数列表：返回值类型</span>
+  <span class="token punctuation">(</span>source<span class="token operator">:</span> object<span class="token punctuation">,</span> key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> srchHairline<span class="token operator">:</span> <span class="token function-variable function">ISrchHairline</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>source<span class="token operator">:</span> object<span class="token punctuation">,</span> key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+  <span class="token comment">// return source[key]</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>source <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">srchHairline</span><span class="token punctuation">(</span>hairline<span class="token punctuation">,</span> <span class="token string">'stats'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// less-hair</span>
+</code></pre></div><h2 id="类类型"><a href="#类类型" class="header-anchor">#</a> 类类型</h2> <p>接口同样可以约束类的类型</p> <h3 id="类实现接口"><a href="#类实现接口" class="header-anchor">#</a> 类实现接口</h3> <div class="language-ts extra-class"><pre class="language-ts"><code>  <span class="token keyword">interface</span> <span class="token class-name">CountHair</span> <span class="token punctuation">{</span>
+    <span class="token function">count</span><span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">Nurse</span> <span class="token keyword">implements</span> <span class="token class-name">CountHair</span> <span class="token punctuation">{</span>
+    <span class="token function">count</span><span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">一根一根数头发，有</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>num<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">根</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> num
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> nurse <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Nurse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  nurse<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">// 一根一根数头发，有10根</span>
+</code></pre></div><h2 id="多接口"><a href="#多接口" class="header-anchor">#</a> 多接口</h2> <p>类实现多个接口，接👆🌰</p> <div class="language-ts extra-class"><pre class="language-ts"><code>  <span class="token keyword">interface</span> <span class="token class-name">Inject</span> <span class="token punctuation">{</span>
+    <span class="token function">injecting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">Nurse</span> <span class="token keyword">implements</span> <span class="token class-name">CountHair</span><span class="token punctuation">,</span>Inject  <span class="token punctuation">{</span>
+    <span class="token function">count</span><span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">一根一根数头发，有</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>num<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">根</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> num
+    <span class="token punctuation">}</span>
+    <span class="token function">injecting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'到点打针了'</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token string">'到点打针了'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> nurse <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Nurse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  nurse<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">// 一根一根数头发，有10根</span>
+  nurse<span class="token punctuation">.</span><span class="token function">injecting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 到点打针了</span>
+</code></pre></div><h2 id="接口继承"><a href="#接口继承" class="header-anchor">#</a> 接口继承</h2> <p>接口与类一样可以相互继承，这样可以灵活的组合，拆分使用，用<code>extends</code>表示，接👆🌰</p> <div class="language-ts extra-class"><pre class="language-ts"><code>  <span class="token keyword">interface</span> <span class="token class-name">NurseDuty</span> <span class="token keyword">extends</span> <span class="token class-name">CountHair</span><span class="token punctuation">,</span> Inject <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+  <span class="token keyword">class</span> <span class="token class-name">Nurse</span> <span class="token keyword">implements</span> <span class="token class-name">NurseDuty</span> <span class="token punctuation">{</span>
+    <span class="token function">count</span><span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">一根一根数头发，有</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>num<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">根</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> num
+    <span class="token punctuation">}</span>
+    <span class="token function">injecting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'到点打针了'</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token string">'到点打针了'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> nurse <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Nurse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  nurse<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+  nurse<span class="token punctuation">.</span><span class="token function">injecting</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>类与接口间叫实现(implements)，接口与接口间叫继承(extends)</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs-ts/grammar/type.html" class="prev">
+          基本类型
+        </a></span> <span class="next"><a href="/docs-ts/grammar/class.html">
+          类
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs-ts/assets/js/app.ff4939b7.js" defer></script><script src="/docs-ts/assets/js/2.1fdbdfe2.js" defer></script><script src="/docs-ts/assets/js/11.7f3a0452.js" defer></script>
+  </body>
+</html>
